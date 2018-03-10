@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/gridlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_colorful_smoke"
+    android:columnCount="3"
+    android:rowCount="10"
+    android:screenOrientation="portrait"
+    android:paddingTop="?attr/actionBarSize">
+
+    <TextView
+        android:layout_gravity="end|center"
+        android:singleLine="true"
+        android:text="@string/zielmenge"
+        android:textColor="@color/colorText"
+        android:textSize="18sp"
+        tools:text="Zielmenge" />
+
+    <EditText
+        android:id="@+id/zielmenge"
+        android:layout_width="100dp"
+        android:layout_gravity="start|center"
+        android:layout_margin="10dp"
+        android:inputType="phone"
+        android:labelFor="@+id/zielmenge"
+        android:singleLine="false" />
+
+    <TextView
+        android:layout_gravity="start|center"
+        android:text="@string/milliliterUnit"
+        android:textColor="@color/colorText" />
+
+    <TextView
+        android:layout_gravity="end|center"
+        android:singleLine="true"
+        android:text="@string/zielkonzentration"
+        android:textColor="@color/colorText"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/zielkonz"
+        android:layout_width="100dp"
+        android:layout_gravity="start|center"
+        android:layout_margin="10dp"
+        android:inputType="phone"
+        android:labelFor="@+id/zielkonz"
+        android:singleLine="false" />
+
+    <TextView
+        android:layout_gravity="start|center"
+        android:text="@string/nikotinUnit"
+        android:textColor="@color/colorText" />
+
+    <TextView
+        android:layout_gravity="end|center"
+        android:singleLine="true"
+        android:text="@string/shotkonzentration"
+        android:textColor="@color/colorText"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/shotkonz"
+        android:layout_width="100dp"
+        android:layout_gravity="start|center"
+        android:layout_margin="10dp"
+        android:inputType="phone"
+        android:labelFor="@+id/shotkonz"
+        android:singleLine="false"
+        android:text="@integer/constShotKonz" />
+
+    <TextView
+        android:layout_gravity="start|center"
+        android:text="@string/nikotinUnit"
+        android:textColor="@color/colorText" />
+
+    <TextView
+        android:layout_gravity="end|center"
+        android:singleLine="true"
+        android:text="@string/aromakonzentration"
+        android:textColor="@color/colorText"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/aromakonz"
+        android:layout_width="100dp"
+        android:layout_gravity="start|center"
+        android:layout_margin="10dp"
+        android:inputType="phone"
+        android:labelFor="@+id/aromakonz"
+        android:singleLine="false" />
+
+    <TextView
+        android:layout_gravity="start|center"
+        android:text="@string/percentSign"
+        android:textColor="@color/colorText" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill"
+        android:layout_row="7"
+        android:onClick="onClickBtn"
+        android:text="@string/calcButtonText" />
+
+    <TextView
+        android:id="@+id/shotMengetextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="center|top"
+        android:layout_row="8"
+        android:onClick="onClickRes"
+        android:text="@string/shotmenge"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/textResult" />
+
+    <TextView
+        android:id="@+id/aromaMengetexView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_columnSpan="3"
+        android:layout_gravity="center|top"
+        android:layout_row="9"
+        android:onClick="onClickRes"
+        android:text="@string/aromamenge"
+        android:textColor="@color/colorText"
+        android:textSize="@dimen/textResult" />
+</GridLayout>
