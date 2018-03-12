@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/gridlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_colorful_smoke"
     android:columnCount="3"
+    android:paddingTop="?attr/actionBarSize"
     android:rowCount="10"
-    android:screenOrientation="portrait"
-    android:paddingTop="?attr/actionBarSize">
+    android:screenOrientation="portrait">
 
     <TextView
         android:layout_gravity="end|center"

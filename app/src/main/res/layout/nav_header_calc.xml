@@ -13,12 +13,11 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="@dimen/navSize"
         android:layout_height="@dimen/navSize"
         android:contentDescription="@string/deco"
-        app:srcCompat="@drawable/darkblue_navi"
-        android:paddingTop="@dimen/nav_header_vertical_spacing" />
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        app:srcCompat="@drawable/darkblue_navi" />
 
     <TextView
         android:layout_width="match_parent"
@@ -28,7 +27,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/by_author" />
