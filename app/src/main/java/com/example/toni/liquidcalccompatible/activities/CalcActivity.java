@@ -2,7 +2,6 @@ package com.example.toni.liquidcalccompatible.activities;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
@@ -26,6 +25,9 @@ import com.example.toni.liquidcalccompatible.R;
 import com.example.toni.liquidcalccompatible.calculations.Calculator;
 
 import java.util.Locale;
+
+import static android.os.Build.VERSION;
+import static android.os.Build.VERSION_CODES;
 
 public class CalcActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
@@ -59,17 +61,24 @@ public class CalcActivity extends AppCompatActivity
         edittextColor = ContextCompat.getColor(this, R.color.colorBackgroundEditText);
         resultColor = ContextCompat.getColor(this, R.color.colorResult);
 
-
         zielMengeET = findViewById(R.id.zielmenge);
         zielKonzET = findViewById(R.id.zielkonz);
         konzShotET = findViewById(R.id.shotkonz);
         konzAromaET = findViewById(R.id.aromakonz);
 
-        if (Build.VERSION.SDK_INT>= Build.VERSION_CODES.O){
-            zielMengeET.setTooltipText(getResources().getString(R.string.tooltipMenge));
-            zielKonzET.setTooltipText(getResources().getString(R.string.tooltipKonz));
-            konzShotET.setTooltipText(getResources().getString(R.string.tooltipShotKonz));
-            konzAromaET.setTooltipText(getResources().getString(R.string.tooltipAroma));
+        Log.i("SDK", "SDK: " + VERSION.SDK_INT);
+        Log.i("Version", "Version: " + VERSION_CODES.O);
+
+        if (VERSION.SDK_INT >= VERSION_CODES.O)
+        {
+            TextView zielmengeTV = findViewById(R.id.zielmengeTV);
+            TextView zielKonzTV = findViewById(R.id.zielKonzTV);
+            TextView shotKonzTV = findViewById(R.id.shotKonzTV);
+            TextView aromaKonzTV = findViewById(R.id.aromaKonzTV);
+            zielmengeTV.setTooltipText(getResources().getString(R.string.tooltipMenge));
+            zielKonzTV.setTooltipText(getResources().getString(R.string.tooltipKonz));
+            shotKonzTV.setTooltipText(getResources().getString(R.string.tooltipShotKonz));
+            aromaKonzTV.setTooltipText(getResources().getString(R.string.tooltipAroma));
         }
 
 
@@ -310,24 +319,27 @@ public class CalcActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item)
     {
         //TODO Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_calc)
+        if (item != null)
         {
+            int id = item.getItemId();
 
-        } else if (id == R.id.nav_notices)
-        {
+            if (id == R.id.nav_calc)
+            {
 
-        } else if (id == R.id.nav_aboutme)
-        {
+            } else if (id == R.id.nav_notices)
+            {
 
-        } else if (id == R.id.nav_share)
-        {
+            } else if (id == R.id.nav_aboutme)
+            {
 
-        }
+            } else if (id == R.id.nav_share)
+            {
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
+            }
+
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            drawer.closeDrawer(GravityCompat.START);
+            return true;
+        } else return false;
     }
 }

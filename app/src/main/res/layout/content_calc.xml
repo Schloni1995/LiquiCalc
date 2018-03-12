@@ -10,6 +10,7 @@
     android:screenOrientation="portrait">
 
     <TextView
+        android:id="@+id/zielmengeTV"
         android:layout_gravity="end|center"
         android:singleLine="true"
         android:text="@string/zielmenge"
@@ -32,6 +33,7 @@
         android:textColor="@color/colorText" />
 
     <TextView
+        android:id="@+id/zielKonzTV"
         android:layout_gravity="end|center"
         android:singleLine="true"
         android:text="@string/zielkonzentration"
@@ -53,6 +55,7 @@
         android:textColor="@color/colorText" />
 
     <TextView
+        android:id="@+id/shotKonzTV"
         android:layout_gravity="end|center"
         android:singleLine="true"
         android:text="@string/shotkonzentration"
@@ -75,6 +78,7 @@
         android:textColor="@color/colorText" />
 
     <TextView
+        android:id="@+id/aromaKonzTV"
         android:layout_gravity="end|center"
         android:singleLine="true"
         android:text="@string/aromakonzentration"

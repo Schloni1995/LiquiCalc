@@ -41,9 +41,11 @@
     </string>
 
     <!--Navigation-->
-    <string name="calc">Rechner</string>
-    <string name="notices">Hinweise</string>
-    <string name="aboutme">Über mich</string>
+    <string name="nav_item_calc">Rechner</string>
+    <string name="nav_item_notices">Hinweise</string>
+    <string name="nav_item_aboutme">Über mich</string>
+    <string name="nav_group_communication">Kommunikation</string>
+
 
     <!--ContentDescription-->
     <string name="deco">decoration</string>
