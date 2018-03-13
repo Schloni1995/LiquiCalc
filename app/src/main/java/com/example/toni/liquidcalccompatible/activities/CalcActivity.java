@@ -326,8 +326,8 @@ public class CalcActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_notices)
         {
+            //TODO Toolbar und NavigationDrawer behalten, aber content wechseln
             Intent intent = new Intent(this, NoticeActivity.class);
-
             startActivity(intent);
 
         } else if (id == R.id.nav_aboutme)
