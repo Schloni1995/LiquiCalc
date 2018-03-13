@@ -28,28 +28,21 @@
     <string name="tooltipMenge">Wie viel Liquid wird gemischt?</string>
     <string name="tooltipKonz">Wie viel Nikotin soll enthalten sein?</string>
     <string name="tooltipShotKonz">Wie viel Nikotin ist in dem Shot enthalten?(steht auf der Packung)</string>
-    <string name="tooltipAroma">Wie viel Aroma soll in das  Liquid?(Empfehlung steht auf der Aromaflasche)</string>
+    <string name="tooltipAroma">Wie viel Aroma soll in das  Liquid?(steht auf der Aromaflasche)</string>
 
     <!--ResultSummary-->
-    <string name="summaryH"><u>Was  heißt das?</u></string>
-    <string name="summary">
-        In die leere Flasche:\n\n
-        - Aromamenge(%s)\n
-        - Shotmenge(%s)\n\n
-               - am besten sieht man sich die Flüssigkeiten in eine Spritze.\n\n
-        - der Rest der Flasche mit Base aufgefüllt.
-    </string>
 
     <!--Navigation-->
     <string name="nav_item_calc">Rechner</string>
     <string name="nav_item_notices">Hinweise</string>
     <string name="nav_item_aboutme">Über mich</string>
     <string name="nav_group_communication">Kommunikation</string>
-
+    <string name="nav_item_share">Teilen</string>
 
     <!--ContentDescription-->
     <string name="deco">decoration</string>
 
     <!--HinweisActivity-->
     <string name="action_settings">Settings</string>
+
 </resources>

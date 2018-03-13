@@ -6,7 +6,5 @@
     <dimen name="nav_header_height">176dp</dimen>
 
     <dimen name="textResult">30sp</dimen>
-    <dimen name="summaryHeadlineSize">34sp</dimen>
-    <dimen name="summaryTextSize">20sp</dimen>
     <dimen name="navSize">80dp</dimen>
 </resources>

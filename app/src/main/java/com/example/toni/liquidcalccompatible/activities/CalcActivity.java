@@ -1,8 +1,8 @@
 package com.example.toni.liquidcalccompatible.activities;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
@@ -56,6 +56,7 @@ public class CalcActivity extends AppCompatActivity
 
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.getMenu().findItem(R.id.nav_calc).setChecked(true);
 
         errorColor = ContextCompat.getColor(this, R.color.colorError);
         edittextColor = ContextCompat.getColor(this, R.color.colorBackgroundEditText);
@@ -80,7 +81,6 @@ public class CalcActivity extends AppCompatActivity
             shotKonzTV.setTooltipText(getResources().getString(R.string.tooltipShotKonz));
             aromaKonzTV.setTooltipText(getResources().getString(R.string.tooltipAroma));
         }
-
 
         resultAromaTV = findViewById(R.id.aromaMengetexView);
         resultShotTV = findViewById(R.id.shotMengetextView);
@@ -173,7 +173,6 @@ public class CalcActivity extends AppCompatActivity
             {
                 Toast.makeText(this, "Fehler bei der Aromakonzentration", Toast.LENGTH_SHORT).show();
                 konzAromaET.setBackgroundColor(errorColor);
-
                 resultShotTV.setBackgroundColor(resultColor);
                 resultShotTV.setText(String.format(Locale.GERMANY, "%s %.2f ml", shotMengetextViewText, shotMenge));
                 resultShotTV.setVisibility(View.VISIBLE);
@@ -224,10 +223,10 @@ public class CalcActivity extends AppCompatActivity
 
     public void onClickRes(View v)
     {
-        Intent intent = new Intent(this, ResultActivity.class);
-        intent.putExtra("shotMenge", String.format(Locale.GERMANY, "%.2f ml", shotMenge));
-        intent.putExtra("aromaMenge", String.format(Locale.GERMANY, "%.2f ml", aromaMenge));
-        startActivity(intent);
+//        Intent intent = new Intent(this, ResultActivity.class);
+//        intent.putExtra("shotMenge", String.format(Locale.GERMANY, "%.2f ml", shotMenge));
+//        intent.putExtra("aromaMenge", String.format(Locale.GERMANY, "%.2f ml", aromaMenge));
+//        startActivity(intent);
     }
 
     private void setLiquidFail()
@@ -316,11 +315,9 @@ public class CalcActivity extends AppCompatActivity
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onNavigationItemSelected(MenuItem item)
+    public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
         //TODO Handle navigation view item clicks here.
-        if (item != null)
-        {
             int id = item.getItemId();
 
             if (id == R.id.nav_calc)
@@ -340,6 +337,5 @@ public class CalcActivity extends AppCompatActivity
             DrawerLayout drawer = findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
             return true;
-        } else return false;
     }
 }
