@@ -3,6 +3,7 @@
     <color name="colorPrimary" tools:keep="@color/colorPrimary">#100999</color>
     <color name="colorAccent" tools:keep="@color/colorAccent">#e9000c</color>
     <color name="colorPrimaryDark">#000c59</color>
+    <color name="colorNoticeText">#000000</color>
     <color name="colorResult">#96000000</color>
     <color name="colorError">#FF0000</color>
     <color name="colorBackgroundEditText">#ffffff</color>

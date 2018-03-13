@@ -20,6 +20,6 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_calc"
-        app:menu="@menu/activity_calc_drawer" />
+        app:menu="@menu/nav_list_menu" />
 
 </android.support.v4.widget.DrawerLayout>

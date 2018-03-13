@@ -1,6 +1,7 @@
 package com.example.toni.liquidcalccompatible.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -223,7 +224,7 @@ public class CalcActivity extends AppCompatActivity
 
     public void onClickRes(View v)
     {
-//        Intent intent = new Intent(this, ResultActivity.class);
+//        Intent intent = new Intent(this, NoticeActivity.class);
 //        intent.putExtra("shotMenge", String.format(Locale.GERMANY, "%.2f ml", shotMenge));
 //        intent.putExtra("aromaMenge", String.format(Locale.GERMANY, "%.2f ml", aromaMenge));
 //        startActivity(intent);
@@ -318,24 +319,27 @@ public class CalcActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
         //TODO Handle navigation view item clicks here.
-            int id = item.getItemId();
+        int id = item.getItemId();
 
-            if (id == R.id.nav_calc)
-            {
+        if (id == R.id.nav_calc)
+        {
 
-            } else if (id == R.id.nav_notices)
-            {
+        } else if (id == R.id.nav_notices)
+        {
+            Intent intent = new Intent(this, NoticeActivity.class);
 
-            } else if (id == R.id.nav_aboutme)
-            {
+            startActivity(intent);
 
-            } else if (id == R.id.nav_share)
-            {
+        } else if (id == R.id.nav_aboutme)
+        {
 
-            }
+        } else if (id == R.id.nav_share)
+        {
 
-            DrawerLayout drawer = findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
-            return true;
+        }
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 }
