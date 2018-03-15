@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.toni.liquidcalccompatible.R;
 import com.example.toni.liquidcalccompatible.fragments.CalcFragment;
 import com.example.toni.liquidcalccompatible.fragments.NoticeFragment;
 

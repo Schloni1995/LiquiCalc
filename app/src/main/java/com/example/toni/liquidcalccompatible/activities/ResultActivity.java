@@ -6,6 +6,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
+import com.example.toni.liquidcalccompatible.R;
+
 import java.util.Locale;
 
 public class ResultActivity extends AppCompatActivity

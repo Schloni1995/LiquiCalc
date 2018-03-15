@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.toni.liquidcalccompatible.R;
 import com.example.toni.liquidcalccompatible.activities.ResultActivity;
 import com.example.toni.liquidcalccompatible.calculations.Calculator;
 
