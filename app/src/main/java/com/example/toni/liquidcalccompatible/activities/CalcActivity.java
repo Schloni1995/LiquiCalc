@@ -1,10 +1,11 @@
 package com.example.toni.liquidcalccompatible.activities;
 
 import android.content.Context;
-import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -24,16 +25,15 @@ import android.widget.Toast;
 
 import com.example.toni.liquidcalccompatible.R;
 import com.example.toni.liquidcalccompatible.calculations.Calculator;
+import com.example.toni.liquidcalccompatible.fragments.CalcFragment;
 
 import java.util.Locale;
-
-import static android.os.Build.VERSION;
-import static android.os.Build.VERSION_CODES;
 
 public class CalcActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
     private final Calculator calculator = new Calculator();
+    private NavigationView navigationView;
     private EditText zielMengeET, zielKonzET, konzShotET, konzAromaET;
     private TextView resultAromaTV, resultShotTV;
     private String aromaMengetextViewText, shotMengetextViewText;
@@ -45,7 +45,7 @@ public class CalcActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calc);
+        setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -55,8 +55,14 @@ public class CalcActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        onOptionsItemSelected(navigationView.getMenu().findItem(R.id.nav_calc));
+    }
+
+    public void firstInit()
+    {
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.getMenu().findItem(R.id.nav_calc).setChecked(true);
 
         errorColor = ContextCompat.getColor(this, R.color.colorError);
@@ -68,10 +74,10 @@ public class CalcActivity extends AppCompatActivity
         konzShotET = findViewById(R.id.shotkonz);
         konzAromaET = findViewById(R.id.aromakonz);
 
-        Log.i("SDK", "SDK: " + VERSION.SDK_INT);
-        Log.i("Version", "Version: " + VERSION_CODES.O);
+        Log.i("SDK", "SDK: " + Build.VERSION.SDK_INT);
+        Log.i("Version", "Version: " + Build.VERSION_CODES.O);
 
-        if (VERSION.SDK_INT >= VERSION_CODES.O)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
             TextView zielmengeTV = findViewById(R.id.zielmengeTV);
             TextView zielKonzTV = findViewById(R.id.zielKonzTV);
@@ -224,7 +230,7 @@ public class CalcActivity extends AppCompatActivity
 
     public void onClickRes(View v)
     {
-//        Intent intent = new Intent(this, NoticeActivity.class);
+//        Intent intent = new Intent(this, Activity.class);
 //        intent.putExtra("shotMenge", String.format(Locale.GERMANY, "%.2f ml", shotMenge));
 //        intent.putExtra("aromaMenge", String.format(Locale.GERMANY, "%.2f ml", aromaMenge));
 //        startActivity(intent);
@@ -289,11 +295,12 @@ public class CalcActivity extends AppCompatActivity
         }
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.calc, menu);
+        getMenuInflater().inflate(R.menu.option_menu_calc, menu);
         return true;
     }
 
@@ -306,30 +313,41 @@ public class CalcActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
+        if (id == R.id.action_clear)
         {
+//            zielMengeET.setText("");
+//            zielKonzET.setText("");
+//            konzShotET.setText(getResources().getInteger(R.integer.shotDefault) + "");
+//            konzAromaET.setText("");
+//            resetFails();
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
         //TODO Handle navigation view item clicks here.
+        item.setChecked(true);
         int id = item.getItemId();
 
         if (id == R.id.nav_calc)
         {
+            //NOTE:  Checks first item in the navigation drawer initially
+            navigationView.setCheckedItem(R.id.nav_calc);
 
+            //NOTE:  Open fragment1 initially.
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_main_layout, new CalcFragment());
+            ft.commit();
         } else if (id == R.id.nav_notices)
         {
-            //TODO Toolbar und NavigationDrawer behalten, aber content wechseln
-            Intent intent = new Intent(this, NoticeActivity.class);
-            startActivity(intent);
+//            Intent intent = new Intent(this, NoticeActivity.class);
+//            startActivity(intent);
 
+            //TODO Toolbar und NavigationDrawer behalten, aber content wechseln
         } else if (id == R.id.nav_aboutme)
         {
 

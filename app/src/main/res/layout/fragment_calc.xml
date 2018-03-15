@@ -1,6 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_calc_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_colorful_smoke"
@@ -71,7 +71,7 @@
         android:inputType="phone"
         android:labelFor="@+id/shotkonz"
         android:singleLine="false"
-        android:text="@integer/constShotKonz" />
+        android:text="@integer/shotDefault" />
 
     <TextView
         android:layout_gravity="start|center"
