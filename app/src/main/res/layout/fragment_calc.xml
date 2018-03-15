@@ -1,6 +1,5 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/content_calc_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_colorful_smoke"
@@ -115,7 +114,6 @@
         android:layout_columnSpan="3"
         android:layout_gravity="center|top"
         android:layout_row="8"
-        android:onClick="onClickRes"
         android:text="@string/shotmenge"
         android:textColor="@color/colorText"
         android:textSize="@dimen/textResult" />
@@ -128,7 +126,6 @@
         android:layout_columnSpan="3"
         android:layout_gravity="center|top"
         android:layout_row="9"
-        android:onClick="onClickRes"
         android:text="@string/aromamenge"
         android:textColor="@color/colorText"
         android:textSize="@dimen/textResult" />

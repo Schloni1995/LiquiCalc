@@ -1,10 +1,12 @@
 package com.example.toni.liquidcalccompatible.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.EditText;
+import android.widget.TextView;
 
-import com.example.toni.liquidcalccompatible.R;
+import java.util.Locale;
 
 public class ResultActivity extends AppCompatActivity
 {
@@ -14,10 +16,18 @@ public class ResultActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        ActionBar ab = getSupportActionBar();
+        if(ab != null) ab.setDisplayHomeAsUpEnabled(true);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Intent intent = getIntent();
 
-        ((EditText) findViewById(R.id.editText)).setKeyListener(null);
+        String shotMenge = intent.getStringExtra("shotMenge");
+        String aromaMenge = intent.getStringExtra("aromaMenge");
+        TextView textView = findViewById(R.id.textView);
+        textView.setKeyListener(null);
+        String text = String.format(Locale.GERMANY, textView.getText().toString(), shotMenge, aromaMenge);
+
+        textView.setText(text);
     }
 
     @Override

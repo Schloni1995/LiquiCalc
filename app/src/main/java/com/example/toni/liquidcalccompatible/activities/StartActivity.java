@@ -13,14 +13,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.toni.liquidcalccompatible.R;
 import com.example.toni.liquidcalccompatible.fragments.CalcFragment;
+import com.example.toni.liquidcalccompatible.fragments.NoticeFragment;
 
 public class StartActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
 {
-    private NavigationView navigationView;
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -38,7 +36,7 @@ public class StartActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        navigationView = findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         MenuItem menuItem = navigationView.getMenu().findItem(R.id.nav_calc);
@@ -76,27 +74,24 @@ public class StartActivity extends AppCompatActivity
 
         if (id == R.id.nav_calc)
         {
-            //NOTE:  Checks first item in the navigation drawer initially
-            navigationView.setCheckedItem(R.id.nav_calc);
-
-            //NOTE:  Open fragment1 initially.
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_main_layout, new CalcFragment());
             ft.commit();
-        } else if (id == R.id.nav_notices)
+        }
+        else if (id == R.id.nav_notices)
         {
-//            Intent intent = new Intent(this, NoticeActivity.class);
-//            startActivity(intent);
-
-            //TODO Toolbar und NavigationDrawer behalten, aber content wechseln
-        } else if (id == R.id.nav_aboutme)
-        {
-
-        } else if (id == R.id.nav_share)
-        {
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.content_main_layout, new NoticeFragment());
+            ft.commit();
 
         }
-
+//        else if (id == R.id.nav_aboutme)
+//        {
+//
+//        } else if (id == R.id.nav_share)
+//        {
+//
+//        }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;

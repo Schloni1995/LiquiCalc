@@ -13,7 +13,6 @@
             android:icon="@drawable/ic_notices"
             android:title="@string/nav_item_notices" />
         <item
-            android:id="@+id/nav_aboutme"
             android:icon="@drawable/ic_aboutme"
             android:title="@string/nav_item_aboutme" />
     </group>
@@ -21,7 +20,6 @@
     <item android:title="@string/nav_group_communication">
         <menu>
             <item
-                android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/nav_item_share" />
         </menu>

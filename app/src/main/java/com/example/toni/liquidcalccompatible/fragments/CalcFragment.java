@@ -18,7 +18,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.toni.liquidcalccompatible.R;
 import com.example.toni.liquidcalccompatible.activities.ResultActivity;
 import com.example.toni.liquidcalccompatible.calculations.Calculator;
 
@@ -33,7 +32,6 @@ public class CalcFragment extends Fragment
     private View view;
     private EditText zielMengeET, zielKonzET, konzShotET, konzAromaET;
     private TextView resultAromaTV, resultShotTV;
-    private Button calcButton;
     private String aromaMengetextViewText, shotMengetextViewText;
     private int errorColor, edittextColor, resultColor;
     private double shotMenge, aromaMenge;
@@ -55,7 +53,7 @@ public class CalcFragment extends Fragment
     }
 
 
-    public void firstInit()
+    private void firstInit()
     {
         setHasOptionsMenu(true);
         errorColor = ContextCompat.getColor(getActivity(), R.color.colorError);
@@ -67,7 +65,7 @@ public class CalcFragment extends Fragment
         konzShotET = view.findViewById(R.id.shotkonz);
         konzAromaET = view.findViewById(R.id.aromakonz);
 
-        calcButton = view.findViewById(R.id.calcButton);
+        Button calcButton = view.findViewById(R.id.calcButton);
         calcButton.setOnClickListener(onClickBtn());
 
         Log.i("SDK", "SDK: " + Build.VERSION.SDK_INT);
@@ -130,9 +128,9 @@ public class CalcFragment extends Fragment
         }
     }
 
-    public View.OnClickListener onClickBtn()
+    private View.OnClickListener onClickBtn()
     {
-        View.OnClickListener clickListener = new View.OnClickListener()
+        return new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -155,7 +153,6 @@ public class CalcFragment extends Fragment
                 handleFails();
             }
         };
-        return clickListener;
 
     }
 
@@ -236,9 +233,9 @@ public class CalcFragment extends Fragment
         */
     }
 
-    public View.OnClickListener onClickResult()
+    private View.OnClickListener onClickResult()
     {
-        View.OnClickListener cl = new View.OnClickListener()
+        return new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
@@ -249,7 +246,6 @@ public class CalcFragment extends Fragment
                 startActivity(intent);
             }
         };
-        return cl;
     }
 
     private void setLiquidFail()
@@ -280,7 +276,7 @@ public class CalcFragment extends Fragment
     {
         zielMengeET.setText("");
         zielKonzET.setText("");
-        konzShotET.setText(getResources().getInteger(R.integer.shotDefault) + "");
+        konzShotET.setText(String.format("%s", String.valueOf(getResources().getInteger(R.integer.shotDefault))));
         konzAromaET.setText("");
         resetFails();
     }
