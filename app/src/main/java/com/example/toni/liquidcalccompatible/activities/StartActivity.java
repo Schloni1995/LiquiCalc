@@ -1,5 +1,6 @@
 package com.example.toni.liquidcalccompatible.activities;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -25,6 +26,9 @@ public class StartActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -36,6 +40,7 @@ public class StartActivity extends AppCompatActivity
 
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
         MenuItem menuItem = navigationView.getMenu().findItem(R.id.nav_calc);
         onNavigationItemSelected(menuItem);
     }
@@ -60,28 +65,6 @@ public class StartActivity extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.option_menu_calc, menu);
         return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_clear)
-        {
-//            zielMengeET.setText("");
-//            zielKonzET.setText("");
-//            konzShotET.setText(getResources().getInteger(R.integer.shotDefault) + "");
-//            konzAromaET.setText("");
-//            resetFails();
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     @Override

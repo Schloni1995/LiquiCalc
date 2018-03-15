@@ -1,6 +1,7 @@
 package com.example.toni.liquidcalccompatible.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,6 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.toni.liquidcalccompatible.R;
+import com.example.toni.liquidcalccompatible.activities.ResultActivity;
 import com.example.toni.liquidcalccompatible.calculations.Calculator;
 
 import java.util.Locale;
@@ -54,6 +57,7 @@ public class CalcFragment extends Fragment
 
     public void firstInit()
     {
+        setHasOptionsMenu(true);
         errorColor = ContextCompat.getColor(getActivity(), R.color.colorError);
         edittextColor = ContextCompat.getColor(getActivity(), R.color.colorBackgroundEditText);
         resultColor = ContextCompat.getColor(getActivity(), R.color.colorResult);
@@ -81,8 +85,11 @@ public class CalcFragment extends Fragment
             aromaKonzTV.setTooltipText(getResources().getString(R.string.tooltipAroma));
         }
 
-        resultAromaTV = view.findViewById(R.id.aromaMengetexView);
+        resultAromaTV = view.findViewById(R.id.aromaMengetextView);
         resultShotTV = view.findViewById(R.id.shotMengetextView);
+        resultAromaTV.setOnClickListener(onClickResult());
+        resultShotTV.setOnClickListener(onClickResult());
+
         aromaMengetextViewText = resultAromaTV.getText().toString();
         shotMengetextViewText = resultShotTV.getText().toString();
 
@@ -236,10 +243,10 @@ public class CalcFragment extends Fragment
             @Override
             public void onClick(View v)
             {
-                //        Intent intent = new Intent(this, Activity.class);
-//        intent.putExtra("shotMenge", String.format(Locale.GERMANY, "%.2f ml", shotMenge));
-//        intent.putExtra("aromaMenge", String.format(Locale.GERMANY, "%.2f ml", aromaMenge));
-//        startActivity(intent);
+                Intent intent = new Intent(getActivity(), ResultActivity.class);
+                intent.putExtra("shotMenge", String.format(Locale.GERMANY, "%.2f ml", shotMenge));
+                intent.putExtra("aromaMenge", String.format(Locale.GERMANY, "%.2f ml", aromaMenge));
+                startActivity(intent);
             }
         };
         return cl;
@@ -269,6 +276,15 @@ public class CalcFragment extends Fragment
         this.aromaFail = true;
     }
 
+    private void clearText()
+    {
+        zielMengeET.setText("");
+        zielKonzET.setText("");
+        konzShotET.setText(getResources().getInteger(R.integer.shotDefault) + "");
+        konzAromaET.setText("");
+        resetFails();
+    }
+
     private void resetFails()
     {
         liquidFail = false;
@@ -291,5 +307,21 @@ public class CalcFragment extends Fragment
         shotMenge = 0;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
 
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_clear)
+        {
+            clearText();
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 }

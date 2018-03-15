@@ -8,7 +8,7 @@
     android:rowCount="10"
     android:screenOrientation="portrait"
     tools:ignore="Overdraw">
-    <!--android:paddingTop="?attr/actionBarSize"-->
+
     <TextView
         android:id="@+id/zielmengeTV"
         android:layout_gravity="end|center"
@@ -121,7 +121,7 @@
         android:textSize="@dimen/textResult" />
 
     <TextView
-        android:id="@+id/aromaMengetexView"
+        android:id="@+id/aromaMengetextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_column="0"
