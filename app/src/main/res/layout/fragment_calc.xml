@@ -5,11 +5,10 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_colorful_smoke"
     android:columnCount="3"
-    android:paddingTop="?attr/actionBarSize"
     android:rowCount="10"
     android:screenOrientation="portrait"
     tools:ignore="Overdraw">
-
+    <!--android:paddingTop="?attr/actionBarSize"-->
     <TextView
         android:id="@+id/zielmengeTV"
         android:layout_gravity="end|center"
@@ -101,12 +100,11 @@
         android:textColor="@color/colorText" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/calcButton"
         android:layout_column="0"
         android:layout_columnSpan="3"
         android:layout_gravity="fill"
         android:layout_row="7"
-        android:onClick="onClickBtn"
         android:text="@string/calcButtonText" />
 
     <TextView
