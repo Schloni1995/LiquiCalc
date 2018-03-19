@@ -52,7 +52,7 @@
     </string>
 
     <!--HinweisFragment-->
-    <string name="notice_headline">Hinweise zum DIY-Liquid\n</string>
+    <string name="notice_headline">Hinweise zum DIY-Liquid</string>
 
     <string name="notice_text_1">
         Um dein Liquid zu mischen brauchst du einige Zutaten:\n
@@ -64,6 +64,21 @@
         - Nikotin-Shots (die Sucht)</i>\n
     </string>
     <string name="notice_text_2">
-        All diese Zutaten bekommst du in jedem gut bestücktem Fachladen. Es gibt auch sehr gute Onlineshops, die dir eine große Auswahl an Dampfer-Equipment bieten.
+        All diese Zutaten bekommst du in jedem gut bestücktem Fachladen. Es gibt auch sehr gute Onlineshops, die dir eine große Auswahl an Dampfer-Equipment bieten.\n
     </string>
+
+    <string name="notice_text_3">
+        In die leeren Liquidflaschen gibst du zuerst das berechnete Aroma oder, wenn nötig, dein Nikotinshot.\n
+        Am besten gelingt dir die Dosierung der Zutaten mit einer Spritze mit angezeichneter Messskala.\n
+        Nachdem du die Substanz(en) in deinen Behälter gegeben hast, kannst du den Rest mit Base aufgießen.
+    </string>
+
+    <string name="notice_text_warning">An dieser Stelle erstmal einige Warnhinweise:</string>
+
+    <string-array name="todo">
+        <item>Beachte immer die Angaben der Hersteller.</item>
+        <item>Wenn du mit Nikotin arbeitest, sei vorsichtig - Nikotin ist ein Nervengift und du arbeitest mit einer konzentrierten Lösung.</item>
+        <item>Arbeite am Besten mit Einweg-Handschuhen. So verhinderst du deine Finger einzusauen. Es gibt nichts schlimmeres als Liquid an den Fingern zu haben.</item>
+        <item>Bewahre deine Chemikalien immer gesichert vor Kindern auf.</item>
+    </string-array>
 </resources>
