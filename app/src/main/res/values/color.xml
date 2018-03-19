@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!--DefaultColors-->
     <color name="colorPrimary" tools:keep="@color/colorPrimary">#100999</color>
     <color name="colorAccent" tools:keep="@color/colorAccent">#e9000c</color>
     <color name="colorPrimaryDark">#000c59</color>
-    <color name="colorResultHead">#000000</color>
-    <color name="colorResult">#BB100999</color>
+
+    <!--ActionColors-->
+    <color name="colorResult">#aa040150</color>
     <color name="colorError">#FF0000</color>
-    <color name="colorBackgroundEditText">#ffffff</color>
-    <color name="colorText">#ffffff</color>
+
+    <!--Simple Colors-->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+
 </resources>

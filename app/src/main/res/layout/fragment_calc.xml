@@ -13,7 +13,7 @@
         android:layout_gravity="end|center"
         android:singleLine="true"
         android:text="@string/zielmenge"
-        android:textColor="@color/colorText"
+        android:textColor="@color/white"
         android:textSize="18sp"
         tools:text="Zielmenge" />
 
@@ -29,14 +29,14 @@
     <TextView
         android:layout_gravity="start|center"
         android:text="@string/milliliterUnit"
-        android:textColor="@color/colorText" />
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/zielKonzTV"
         android:layout_gravity="end|center"
         android:singleLine="true"
         android:text="@string/zielkonzentration"
-        android:textColor="@color/colorText"
+        android:textColor="@color/white"
         android:textSize="18sp" />
 
     <EditText
@@ -51,14 +51,14 @@
     <TextView
         android:layout_gravity="start|center"
         android:text="@string/nikotinUnit"
-        android:textColor="@color/colorText" />
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/shotKonzTV"
         android:layout_gravity="end|center"
         android:singleLine="true"
         android:text="@string/shotkonzentration"
-        android:textColor="@color/colorText"
+        android:textColor="@color/white"
         android:textSize="18sp" />
 
     <EditText
@@ -74,14 +74,14 @@
     <TextView
         android:layout_gravity="start|center"
         android:text="@string/nikotinUnit"
-        android:textColor="@color/colorText" />
+        android:textColor="@color/white" />
 
     <TextView
         android:id="@+id/aromaKonzTV"
         android:layout_gravity="end|center"
         android:singleLine="true"
         android:text="@string/aromakonzentration"
-        android:textColor="@color/colorText"
+        android:textColor="@color/white"
         android:textSize="18sp" />
 
     <EditText
@@ -96,7 +96,7 @@
     <TextView
         android:layout_gravity="start|center"
         android:text="@string/percentSign"
-        android:textColor="@color/colorText" />
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/calcButton"
@@ -115,8 +115,8 @@
         android:layout_gravity="center|top"
         android:layout_row="8"
         android:text="@string/shotmenge"
-        android:textColor="@color/colorText"
-        android:textSize="@dimen/textResult" />
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_Result" />
 
     <TextView
         android:id="@+id/aromaMengetextView"
@@ -127,6 +127,6 @@
         android:layout_gravity="center|top"
         android:layout_row="9"
         android:text="@string/aromamenge"
-        android:textColor="@color/colorText"
-        android:textSize="@dimen/textResult" />
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_Result" />
 </GridLayout>

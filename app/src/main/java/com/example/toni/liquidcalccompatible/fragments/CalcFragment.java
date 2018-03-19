@@ -9,6 +9,8 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,7 @@ import android.widget.Toast;
 import com.example.toni.liquidcalccompatible.R;
 import com.example.toni.liquidcalccompatible.activities.ResultActivity;
 import com.example.toni.liquidcalccompatible.calculations.Calculator;
+import com.example.toni.liquidcalccompatible.logging.MyLogger;
 
 import java.util.Locale;
 
@@ -29,6 +32,7 @@ import java.util.Locale;
  */
 public class CalcFragment extends Fragment
 {
+    private final static MyLogger LOG = new MyLogger();
     private final Calculator calculator = new Calculator();
     private View view;
     private EditText zielMengeET, zielKonzET, konzShotET, konzAromaET;
@@ -58,7 +62,7 @@ public class CalcFragment extends Fragment
     {
         setHasOptionsMenu(true);
         errorColor = ContextCompat.getColor(getActivity(), R.color.colorError);
-        edittextColor = ContextCompat.getColor(getActivity(), R.color.colorBackgroundEditText);
+        edittextColor = ContextCompat.getColor(getActivity(), R.color.white);
         resultColor = ContextCompat.getColor(getActivity(), R.color.colorResult);
 
         zielMengeET = view.findViewById(R.id.zielmenge);
@@ -69,8 +73,8 @@ public class CalcFragment extends Fragment
         Button calcButton = view.findViewById(R.id.calcButton);
         calcButton.setOnClickListener(onClickBtn());
 
-        Log.i("SDK", "SDK: " + Build.VERSION.SDK_INT);
-        Log.i("Version", "Version: " + Build.VERSION_CODES.O);
+        LOG.outInfo("Installed SDK", "SDK: " + Build.VERSION.SDK_INT);
+        LOG.outInfo("Needed SDK", "Version: " + Build.VERSION_CODES.O);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
         {
@@ -321,4 +325,13 @@ public class CalcFragment extends Fragment
 
         return super.onOptionsItemSelected(item);
     }
+
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
+    {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        inflater.inflate(R.menu.option_menu_calc, menu);
+    }
+
 }

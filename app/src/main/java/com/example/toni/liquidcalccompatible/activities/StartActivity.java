@@ -10,7 +10,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.example.toni.liquidcalccompatible.R;
@@ -57,20 +56,12 @@ public class StartActivity extends AppCompatActivity
         }
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.option_menu_calc, menu);
-        return true;
-    }
-
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
         //TODO Handle navigation view item clicks here.
         item.setChecked(true);
+        setTitle(item.getTitle());
         int id = item.getItemId();
 
         if (id == R.id.nav_calc)
@@ -78,8 +69,7 @@ public class StartActivity extends AppCompatActivity
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_main_layout, new CalcFragment());
             ft.commit();
-        }
-        else if (id == R.id.nav_notices)
+        } else if (id == R.id.nav_notices)
         {
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.content_main_layout, new NoticeFragment());
@@ -89,7 +79,8 @@ public class StartActivity extends AppCompatActivity
 //        else if (id == R.id.nav_aboutme)
 //        {
 //
-//        } else if (id == R.id.nav_share)
+//        }
+// else if (id == R.id.nav_share)
 //        {
 //
 //        }
