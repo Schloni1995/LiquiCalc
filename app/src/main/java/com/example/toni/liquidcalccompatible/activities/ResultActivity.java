@@ -12,7 +12,6 @@ import java.util.Locale;
 
 public class ResultActivity extends AppCompatActivity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
