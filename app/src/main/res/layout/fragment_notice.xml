@@ -15,7 +15,6 @@
         android:showDividers="beginning|middle|end">
 
         <TextView
-            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/notice_headline"
@@ -30,10 +29,14 @@
             android:textSize="@dimen/text_Warning" />
 
         <com.example.toni.liquidcalccompatible.objects.NonScrollListView
+            android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:divider="@android:drawable/divider_horizontal_textfield"
+            android:dividerHeight="1dp"
             android:entries="@array/todo"
-            android:paddingBottom="@dimen/notice_margin" />
+            android:paddingBottom="@dimen/notice_margin"
+            android:theme="@style/ListFont" />
 
         <TextView
             android:layout_width="match_parent"

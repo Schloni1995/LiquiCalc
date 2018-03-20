@@ -12,6 +12,13 @@ public class Calculator
     private final MyLogger LOG = new MyLogger();
     private final String LOG_TAG = Calculator.this.toString();
 
+    private boolean isDigit()
+    {
+        //TODO ist Zahl?
+
+        return true;
+    }
+
     public double calcShotMenge(String zielLiquidMengeString, String zielLiquidKonzString, String konzShotString)
     {
         double zielLiquidMenge = Double.parseDouble(zielLiquidMengeString);
