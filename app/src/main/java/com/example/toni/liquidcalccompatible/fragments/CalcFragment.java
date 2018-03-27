@@ -150,6 +150,8 @@ public class CalcFragment extends Fragment
                 resetFails();
                 checkTextValidation(liquidMenge, liquidKonz, shotKonz, aromaKonz);
 
+                //TODO Fehler bei Eingabe behandeln
+
                 if (nonFail || (!liquidFail && !shotFail && !nicFail))
                     shotMenge = calculator.calcShotMenge(liquidMenge, liquidKonz, shotKonz);
                 if (nonFail || (!liquidFail && !aromaFail))
