@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:divider="@android:drawable/divider_horizontal_textfield"
             android:dividerHeight="1dp"
-            android:entries="@array/todo"
+            android:entries="@array/notice_warnings"
             android:paddingBottom="@dimen/notice_margin"
             android:theme="@style/ListFont" />
 

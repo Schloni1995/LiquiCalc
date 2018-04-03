@@ -33,6 +33,7 @@ import java.util.Locale;
 public class CalcFragment extends Fragment
 {
     private final static MyLogger LOG = new MyLogger();
+    private final static String DIGIT = "[0-9]+(\\.[0-9]+)?";
     private final Calculator calculator = new Calculator();
     private View view;
     private EditText zielMengeET, zielKonzET, konzShotET, konzAromaET;
@@ -150,8 +151,6 @@ public class CalcFragment extends Fragment
                 resetFails();
                 checkTextValidation(liquidMenge, liquidKonz, shotKonz, aromaKonz);
 
-                //TODO Fehler bei Eingabe behandeln
-
                 if (nonFail || (!liquidFail && !shotFail && !nicFail))
                     shotMenge = calculator.calcShotMenge(liquidMenge, liquidKonz, shotKonz);
                 if (nonFail || (!liquidFail && !aromaFail))
@@ -180,8 +179,14 @@ public class CalcFragment extends Fragment
 
     private boolean inputNotValid(String input)
     {
-        Log.d("Validation", "Input(" + input + ") = " + Boolean.toString(!input.isEmpty()));
-        return input.isEmpty();
+        boolean multiPoints = false;
+        //TODO richtige RegEx für Vermeidung von doublePoints
+        if (input.matches("[,]{2,}") || input.matches("[.]{2,}"))
+        {
+            LOG.outInfo("Input matches", new String[]{Boolean.toString(input.matches("[,]{2,}")), Boolean.toString(input.matches("[.]{2,}"))});
+            multiPoints = true;
+        }
+        return (input.isEmpty() || multiPoints);
     }
 
     private void handleFails()

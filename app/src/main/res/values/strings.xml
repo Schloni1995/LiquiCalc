@@ -75,10 +75,10 @@
 
     <string name="notice_text_warning">An dieser Stelle erstmal einige Warnhinweise:</string>
 
-    <string-array name="todo">
+    <string-array name="notice_warnings">
         <item>- Beachte immer die Angaben der Hersteller.\n</item>
         <item>- Wenn du mit Nikotin arbeitest, sei vorsichtig - Nikotin ist ein Nervengift und du arbeitest mit einer konzentrierten Lösung.\n</item>
         <item>- Arbeite am Besten mit Einweg-Handschuhen. So verhinderst du deine Finger einzusauen. Es gibt nichts schlimmeres als Liquid an den Fingern zu haben.\n</item>
-        <item>- Bewahre deine Chemikalien immer gesichert vor Kindern auf.\n</item>
+        <item>- <b>Bewahre deine Chemikalien immer gesichert vor Kindern auf.</b>\n</item>
     </string-array>
 </resources>

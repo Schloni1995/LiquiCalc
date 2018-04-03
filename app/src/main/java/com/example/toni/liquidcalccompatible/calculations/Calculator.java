@@ -12,18 +12,11 @@ public class Calculator
     private final MyLogger LOG = new MyLogger();
     private final String LOG_TAG = Calculator.this.toString();
 
-    private boolean isDigit()
-    {
-        //TODO ist Zahl?
-
-        return true;
-    }
-
     public double calcShotMenge(String zielLiquidMengeString, String zielLiquidKonzString, String konzShotString)
     {
-        double zielLiquidMenge = Double.parseDouble(zielLiquidMengeString);
-        double zielLiquidKonz = Double.parseDouble(zielLiquidKonzString);
-        double konzShot = Double.parseDouble(konzShotString);
+        double zielLiquidMenge = Double.parseDouble(zielLiquidMengeString.replace(",", "."));
+        double zielLiquidKonz = Double.parseDouble(zielLiquidKonzString.replace(",", "."));
+        double konzShot = Double.parseDouble(konzShotString.replace(",", "."));
 
         String[] messages = new String[]{
                 "Zielmenge Liquid:" + zielLiquidMenge,
@@ -37,9 +30,8 @@ public class Calculator
     public double calcAromaMenge(String zielLiquidMengeString, String konzAromaString)
     {
         double zielLiquidMenge, konzAroma;
-        zielLiquidMenge = Double.parseDouble(zielLiquidMengeString);
-        konzAroma = Double.parseDouble(konzAromaString);
-//        LOG.outInfo(LOG_TAG + "_calcAromamenge", "Konzentration Aroma:" + konzAroma);
-        return (zielLiquidMenge * konzAroma / 100);
+        zielLiquidMenge = Double.parseDouble(zielLiquidMengeString.replace(",", "."));
+        konzAroma = Double.parseDouble(konzAromaString.replace(",", "."));
+        return (zielLiquidMenge * konzAroma / 100d);
     }
 }
