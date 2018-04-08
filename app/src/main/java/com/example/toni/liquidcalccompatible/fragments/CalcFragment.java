@@ -151,6 +151,9 @@ public class CalcFragment extends Fragment
                 resetFails();
                 checkTextValidation(liquidMenge, liquidKonz, shotKonz, aromaKonz);
 
+                //TODO Hiier  Kommas druch Punktersetzen
+                //TODO Doppelkonn / - punkt verhindern
+
                 if (nonFail || (!liquidFail && !shotFail && !nicFail))
                     shotMenge = calculator.calcShotMenge(liquidMenge, liquidKonz, shotKonz);
                 if (nonFail || (!liquidFail && !aromaFail))
@@ -179,14 +182,7 @@ public class CalcFragment extends Fragment
 
     private boolean inputNotValid(String input)
     {
-        boolean multiPoints = false;
-        //TODO richtige RegEx für Vermeidung von doublePoints
-        if (input.matches("[,]{2,}") || input.matches("[.]{2,}"))
-        {
-            LOG.outInfo("Input matches", new String[]{Boolean.toString(input.matches("[,]{2,}")), Boolean.toString(input.matches("[.]{2,}"))});
-            multiPoints = true;
-        }
-        return (input.isEmpty() || multiPoints);
+        return (input.isEmpty());
     }
 
     private void handleFails()
