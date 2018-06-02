@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "631496171901",
+    "firebase_url": "https://liquicalc.firebaseio.com",
+    "project_id": "liquicalc",
+    "storage_bucket": "liquicalc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:631496171901:android:ed9d055258827927",
+        "android_client_info": {
+          "package_name": "com.example.toni.liquidcalccompatible"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "631496171901-08cjkh4v78sfc1uphhnnt3bnoe9rn5pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqJXulj4W7iwJdMu1xUru5H1JuWynmC2w"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

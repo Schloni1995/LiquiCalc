@@ -10,11 +10,17 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 
 import com.example.toni.liquidcalccompatible.R;
 import com.example.toni.liquidcalccompatible.fragments.CalcFragment;
 import com.example.toni.liquidcalccompatible.fragments.NoticeFragment;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class StartActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener
@@ -41,7 +47,40 @@ public class StartActivity extends AppCompatActivity
 
         MenuItem menuItem = navigationView.getMenu().findItem(R.id.nav_calc);
         onNavigationItemSelected(menuItem);
+
+        firebaseOperation();
     }
+
+    private void firebaseOperation()
+    {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
+        Log.d("Firebase", "Value inserted");
+
+
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener()
+        {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+                String value = dataSnapshot.getValue(String.class);
+                Log.d("Firebase", "Value is: " + value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error)
+            {
+                // Failed to read value
+                Log.w("Firebase", "Failed to read value.", error.toException());
+            }
+        });
+    }
+
 
     @Override
     public void onBackPressed()
