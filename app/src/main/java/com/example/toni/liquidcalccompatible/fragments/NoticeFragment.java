@@ -14,7 +14,7 @@ import com.example.toni.liquidcalccompatible.R;
  */
 public class NoticeFragment extends Fragment
 {
-    View view;
+    private View view;
 
     public NoticeFragment()
     {

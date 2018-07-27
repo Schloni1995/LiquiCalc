@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.toni.liquidcalccompatible"
@@ -17,14 +19,26 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layouts/single_objects',
+                            'src/main/res/layouts/fragments',
+                            'src/main/res/layouts/activities',
+                            'src/main/res/layouts',
+                            'src/main/res'
+                    ]
+        }
+    }
     productFlavors {
     }
+    buildToolsVersion '28.0.0'
 }
 
 dependencies {
     implementation 'com.google.firebase:firebase-core:15.0.0'
     implementation 'com.google.firebase:firebase-database:15.0.0'
-
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:support-v4:26.1.0'
@@ -34,5 +48,4 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
-
 apply plugin: 'com.google.gms.google-services'
