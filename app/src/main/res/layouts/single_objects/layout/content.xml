@@ -4,6 +4,6 @@
     android:id="@+id/content_main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"
+    android:paddingTop="?android:attr/actionBarSize"
     tools:showIn="@layout/app_bar" />
 

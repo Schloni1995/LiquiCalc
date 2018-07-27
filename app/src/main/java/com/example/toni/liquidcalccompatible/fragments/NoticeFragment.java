@@ -14,7 +14,6 @@ import com.example.toni.liquidcalccompatible.R;
  */
 public class NoticeFragment extends Fragment
 {
-    private View view;
 
     public NoticeFragment()
     {
@@ -26,11 +25,12 @@ public class NoticeFragment extends Fragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_notice, container, false);
+        View view = inflater.inflate(R.layout.fragment_notice, container, false);
         init();
         return view;
     }
 
+    @SuppressWarnings("EmptyMethod")
     private void init()
     {
 //        NonScrollListView nonScrollListView = getActivity().findViewById(R.id.listView);

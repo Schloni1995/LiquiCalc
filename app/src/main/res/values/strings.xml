@@ -67,12 +67,6 @@
         All diese Zutaten bekommst du in jedem gut bestücktem Fachladen. Es gibt auch sehr gute Onlineshops, die dir eine große Auswahl an Dampfer-Equipment bieten.\n
     </string>
 
-    <string name="notice_text_3">
-        In die leeren Liquidflaschen gibst du zuerst das berechnete Aroma oder, wenn nötig, dein Nikotinshot.\n
-        Am besten gelingt dir die Dosierung der Zutaten mit einer Spritze mit angezeichneter Messskala.\n
-        Nachdem du die Substanz(en) in deinen Behälter gegeben hast, kannst du den Rest mit Base aufgießen.
-    </string>
-
     <string name="notice_text_warning">An dieser Stelle erstmal einige Warnhinweise:</string>
 
     <string-array name="notice_warnings">

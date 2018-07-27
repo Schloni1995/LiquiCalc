@@ -62,9 +62,10 @@ public class CalcFragment extends Fragment
     private void firstInit()
     {
         setHasOptionsMenu(true);
-        errorColor = ContextCompat.getColor(getActivity(), R.color.colorError);
-        edittextColor = ContextCompat.getColor(getActivity(), R.color.white);
-        resultColor = ContextCompat.getColor(getActivity(), R.color.colorResult);
+
+        errorColor = ContextCompat.getColor(getContext(), R.color.colorError);
+        edittextColor = ContextCompat.getColor(getContext(), R.color.white);
+        resultColor = ContextCompat.getColor(getContext(), R.color.colorResult);
 
         zielMengeET = view.findViewById(R.id.zielmenge);
         zielKonzET = view.findViewById(R.id.zielkonz);
